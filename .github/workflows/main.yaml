@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   PrintFirst:
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,14 +23,14 @@ jobs:
     needs: PrintFirst
     environment:
       name: approvers
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
     steps:
       - name: manual approve
         run: echo "Manually Approved"
 
   PrintSecond:
     needs: ManualTrigger
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Print
         run: echo "Hello Again!"
