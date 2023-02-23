@@ -28,9 +28,9 @@ jobs:
       - name: manual approve
         run: echo "Manually Approved"
 
-    PrintSecond:
-      needs: ManualTrigger
-      runs-on: alpine-latest
-      steps:
-        - name: Print
-          run: echo "Hello Again!"
+  PrintSecond:
+    needs: ManualTrigger
+    runs-on: alpine-latest
+    steps:
+       - name: Print
+        run: echo "Hello Again!"
