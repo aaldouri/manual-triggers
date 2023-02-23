@@ -32,5 +32,5 @@ jobs:
     needs: ManualTrigger
     runs-on: alpine-latest
     steps:
-       - name: Print
+      - name: Print
         run: echo "Hello Again!"
