@@ -10,8 +10,8 @@ permissions:
   pull-requests: write
 
 jobs:
+  runs-on: ubuntu-latest
   PrintFirst:
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,14 +23,12 @@ jobs:
     needs: PrintFirst
     environment:
       name: approvers
-    runs-on: ubuntu-latest
     steps:
       - name: manual approve
         run: echo "Manually Approved"
 
   PrintSecond:
     needs: ManualTrigger
-    runs-on: ubuntu-latest
     steps:
       - name: Print
         run: echo "Hello Again!"
